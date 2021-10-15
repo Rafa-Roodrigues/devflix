@@ -1,0 +1,426 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+
+:root {
+  --cor-principal: #312E38;
+  --orange: #ff9000;
+  --cor-branco: #f4ede8;
+  --cor-preto: #232129;
+  --cor-cinza: #666360;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: var(--cor-principal);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/********** CABEÇALHO **********/
+
+header {
+  border-bottom: 2px solid var(--orange);
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+
+  padding: 0.9375rem;
+}
+
+#logo {
+  max-width: 90px;
+}
+
+#form {
+  border: 2px solid var(--cor-principal);
+}
+
+#form:focus {
+  border: 2px solid var(--orange);
+}
+
+#search {
+  max-width: inherit;
+  width: inherit;
+  height: inherit;
+
+  padding-left: 20px;
+
+  font-weight: 200;
+  color: var(--cor-cinza);
+  border: 2px solid var(--cor-preto);
+  transition: 0.7s;
+  border-radius: 5px;
+  background-color: var(--cor-preto);
+  outline: 0;
+}
+
+#search:focus {
+  border: 2px solid var(--orange);
+}
+
+/*********** MOVIES ***********/
+
+main {
+  padding: 2.5rem 0.625rem;
+}
+
+.card {
+  max-width: 210px;
+
+  border-bottom: 3px solid #666360;
+  padding-bottom: 0.9375rem;
+
+  cursor: pointer;
+  transition: border 0.2s;
+  overflow: hidden;
+
+  border-radius: 4px 4px 0px 0px;
+}
+
+.card:hover {
+  border-bottom: 3px solid var(--orange);
+}
+
+.box-image {
+  overflow: hidden;
+}
+
+.image-movie {
+  width: 100%;
+  max-width: 210px;
+  max-height: 285px;
+
+  border-radius: 4px;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.image-movie:hover {
+  transform: scale(1.1);
+}
+
+.info-movie {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cor-branco);
+  background-color: var(--cor-principal);
+  z-index: 2;
+
+  padding: 5px;
+  margin-top: -3px;
+}
+
+.info-movie span {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.info-movie span img {
+  margin-right: 5px;
+}
+
+.star {
+  display: inline;
+  width: 20px;
+}
+
+/********** RODAPÈ **********/
+
+footer {
+  padding: 0.875rem 0;
+  border-top: 2px solid var(--orange);
+  color: var(--cor-branco);
+  font-size: 1.125rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  margin-bottom: 0.625rem;
+}
+
+.icon-social {
+  margin-left: 0.625rem;
+  width: 22px;
+  filter: invert(48%) sepia(98%) saturate(1043%) hue-rotate(3deg) brightness(106%) contrast(103%);
+}
+
+/********** RESPONSIVIDADE DAS FONTES **********/
+
+@media(min-width: 0px) and (max-width: 425px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media(min-width: 426px) and (max-width: 780px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 781px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/********** RESPONSIVIDADE DO CONTAINER DOS FILMES **********/
+
+@media(min-width: 0px) and (max-width: 425px) {
+  .container-movies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media(min-width: 426px) and (max-width: 780px) {
+  .container-movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9375rem;
+  }
+}
+
+@media(min-width: 781px) {
+  .container-movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5625rem;
+  }
+}
+
+/********** RESPONSIVIDADE DO CABEÇALHO **********/
+@media(min-width: 0px) and (max-width: 780px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #form {
+    width: 100%;
+    height: 40px;
+
+    margin-top: 1.25rem;
+  }
+}
+
+@media(min-width: 781px) {
+  nav {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #form {
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+
+    margin-top: 1.25rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* a {
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+a:hover {
+  color: green;
+  font-weight: bold;
+}
+
+div {
+  display: inline;
+} */
