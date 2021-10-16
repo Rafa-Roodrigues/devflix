@@ -7,8 +7,8 @@
     <title>Pagination</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -21,57 +21,13 @@
       </nav>
     </header>
     <main>
-      <section class="container container-movies">
-        <div class=card>
-          <div class="box-image">
-            <img class="image-movie" src="https://br.web.img2.acsta.net/pictures/15/11/13/14/46/341047.jpg" alt="">
-          </div>
-          <div class="info-movie">
-            <p>a grande aposta</p>
-            <span>
-              <img class="star" src="./img/start.svg" alt="Estrela amarela">
-              8/10
-            </span>
-          </div>
-        </div>
-        <div class=card>
-          <div class="box-image">
-            <img class="image-movie" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBpoI6n7XA2qtOch9OJceK6jnkiiivSmCy6ciEGF4W8137SSY5" alt="">
-          </div>
-          <div class="info-movie">
-            <p>O poderoso chefão</p>
-            <span>
-              <img class="star" src="./img/start.svg" alt="Estrela amarela">
-              8/10
-            </span>
-          </div>
-        </div>
-        <div class=card>
-          <div class="box-image">
-            <img class="image-movie" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBpoI6n7XA2qtOch9OJceK6jnkiiivSmCy6ciEGF4W8137SSY5" alt="">
-          </div>
-          <div class="info-movie">
-            <p>O poderoso chefão</p>
-            <span>
-              <img class="star" src="./img/start.svg" alt="Estrela amarela">
-              8/10
-            </span>
-          </div>
-        </div>
-        <div class=card>
-          <div class="box-image">
-            <img class="image-movie" src="https://ottvsimg.ottvs.com.br/cov/so.004543/0004543_335.jpg" alt="">
-          </div>
-          <div class="info-movie">
-            <p>O livro de Eli</p>
-            <span>
-              <img class="star" src="./img/start.svg" alt="Estrela amarela">
-              8/10
-            </span>
-          </div>
-        </div>
-      </section>
+      <section id="container-movies" class="container container-movies"></section>
     </main>
+    <article>
+      <div class="container pagination">
+        <p>Página 4 de 250: <span id="numberPages"></span></p>
+      </div>
+    </article>
     <footer>
       <a href="https://github.com/Rafa-Roodrigues?tab=repositories" target="_blank">Desenvolvido por: Rafael Rodrigues</a>
       <p>
@@ -83,10 +39,7 @@
         </a>
       </p>
     </footer>
-    <script src="./js/request.js"></script>
+    <script type="module" src="./js/request.js"></script>
+    <script type="module" src="./js/pagination.js"></script>
   </body>
 </html>
-
-
-<!-- <span>Página 4 de 250:</span>
-  <div id="numberPages"></div> -->

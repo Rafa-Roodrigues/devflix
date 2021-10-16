@@ -1,3 +1,6 @@
+// import { urls } from "./dataApi.js";
+// import { renderCards } from "./request.js";
+
 let movies = [
   {movie: ""},
   {movie: ""},
@@ -22,7 +25,7 @@ let movies = [
 ]
 
 let totalPages = 500;
-let paginaAtual = 10;
+let paginaAtual = 1;
 let cont = 0;
 const numberPage = document.getElementById("numberPages");
 
@@ -57,6 +60,12 @@ function temp() {
   for(let i = paginaAtual; i <= totalPages; i++) {
     cont++;
     const element = createElementHTML("a", i, true);
+    element.onclick = (e) => {
+      const seila = renderCards(urls.movies,"&page="+e.target.innerText);
+      const {totalPages, page} = seila;
+      paginaAtual = page;
+      temp();
+    }
     
     numberPage.appendChild(element);
   
