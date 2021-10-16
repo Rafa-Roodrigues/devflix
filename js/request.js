@@ -9,14 +9,19 @@ async function getMovies(url, params) {
 }
 
 function createCardMovie(movie) {
-  const container = document.createElement("div");
+  const container = document.createElement("a");
+  container.href = "./movie.html";
   container.classList.add("card");
+
+  container.onclick = () => {
+    localStorage.setItem("@DEVFLIX", JSON.stringify(movie.id));
+  }
 
   const figure = document.createElement("figure");
   figure.classList.add("figure");
 
   const imageMovie = document.createElement("img");
-  imageMovie.src = urls.image + movie.poster_path;
+  imageMovie.src = urls.image + "w500" +movie.poster_path;
   imageMovie.alt = `Imagem do filmes ${movie.title}`;
 
   const boxInfo = document.createElement("div");
@@ -64,8 +69,6 @@ function renderCards(movies) {
     }
   });
 }
-
-
 
 window.addEventListener("load", request(urls.movies, "&page=1"));
 
