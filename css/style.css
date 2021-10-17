@@ -386,6 +386,72 @@ footer p {
   100% { transform: rotate(360deg); }
 }
 
+/********** MODAL **********/
+#modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+  z-index: 999;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-modal {
+  width: 100%;
+  max-width: 600px;
+  color: var(--cor-branco);
+  text-align: center;
+  padding: 8px;
+}
+
+#content-modal h2 {
+  width: 100%;
+  font-size: 30px;
+  background-color: var(--orange);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+#modal p {
+  color: #ffffff;
+  display: block;
+  background-color: var(--orange);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+iframe {
+  width: 100%;
+
+  padding-bottom: 10px;
+}
+
+/********** RESPONSIVIDADE DA MODAL **********/
+
+@media(min-width: 0px) {
+  iframe {
+    height: 280px;
+  }
+}
+
+@media(min-width: 456px) and (max-width: 780px) {
+  iframe {
+    height: 320px;
+  }
+}
+
+@media(min-width: 781px) {
+  iframe {
+    height: 400px;
+  }
+}
 /********** RESPONSIVIDADE DA PÁGINA DAS INFORMAÇÕES DO FILME **********/
 
 @media(min-width: 0px) {

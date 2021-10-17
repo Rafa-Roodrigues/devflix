@@ -10,6 +10,8 @@ export async function getMovieId(id) {
 async function getTrailer(id) {
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f6541db294ac187416fae0f1b9effcce&language=pt-BR`);
   const data = await response.json();
+
+  return data.results;
 }
 
 function getLocalStorage() {
@@ -77,7 +79,7 @@ function  createCard({
         <p id="release-date">${formatDate(release_date)}</p>
         <p id="genres">${formatGenres(genres)}</p>
         <div id="box-vote-movie">${formatStar(vote_average)}</div>
-        <button id="button-watch-movie">Assistir trailer</button>
+        <button data="${id}" id="button-watch-movie">Assistir trailer</button>
       </div>
       <p id="sinopse-movie">${overview}</p>
         <!-- <iframe src="https://www.youtube.com/embed/yL65RwsVjA8" frameborder="0" allowfullscreen></iframe> -->
@@ -109,6 +111,38 @@ function renderInfoOfMovie(movie) {
   main.innerHTML = containerMovie;
 }
 
+async function modalOpenClose(status, id) {
+  const modal = document.getElementById("modal");
+  const contentModal = document.getElementById("content-modal");
+
+  if(status) {
+    modal.style.display = "flex";
+    const trailer = await getTrailer(id);
+    if(trailer[0]) {
+      let iframe = `
+        <iframe 
+          src="https://www.youtube.com/embed/${trailer[0].key}" 
+          frameborder="0" allow="accelerometer; 
+          autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      `;
+      contentModal.innerHTML = iframe;
+      const p = document.createElement("p");
+      p.innerHTML = "Coloque em tela cheia para uma melhor expêriencia!"
+      contentModal.appendChild(p);
+    } else {
+      const h2 = document.createElement("h2");
+      h2.innerHTML = "Infelizmente não temos este trailer!!!"
+      contentModal.appendChild(h2);
+    }
+    
+  } else {
+    modal.style.display = "none";
+    contentModal.innerHTML = "";
+  }
+}
+
 function responsivenessOfBoxSinopse(e) {
   const sinopseMovie = document.getElementById("sinopse-movie");
   const boxInfoMovie = document.getElementById("box-info-movie");
@@ -130,5 +164,22 @@ window.addEventListener("load", (e) => {
   getLocalStorage();
   setTimeout(() => {
     responsivenessOfBoxSinopse(e);
-  }, 180);
+  }, 1000);
 });
+
+setTimeout(() => {
+  const button = document.getElementById("button-watch-movie");
+  button.addEventListener("click", (e) => {
+    const id = e.target.attributes[0].value;
+    modalOpenClose(true, id);
+  });
+}, 1000);
+
+const modal = document.getElementById("modal");
+modal.addEventListener("click", (e) => {
+
+  if(e.target.id == "modal") {
+    modalOpenClose(false);
+  }
+})
+

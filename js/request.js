@@ -54,11 +54,6 @@ function createCardMovie(movie) {
   return container;
 }
 
-// async function request(url, params) {
-//   const movies = await getMovies(url, params);
-//   renderCards(movies.results);
-// }
-
 function renderCards(movies) {
 
   const container = document.getElementById("container-movies");
@@ -86,5 +81,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
   if(search.value) {
     loading();
     getMovies(urls.search, search.value);
+    search.value = "";
+    search.blur();
   }
 })
