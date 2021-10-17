@@ -1,16 +1,15 @@
 import { urls } from './dataApi.js';
+import { loading } from './loading.js';
 
 export async function getMovieId(id) {
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f6541db294ac187416fae0f1b9effcce&language=pt-BR`);
   const data = await response.json();
   renderInfoOfMovie(data);
-  // document.getElementById("background-image").style.backgroundImage = `url("${urls.image+ "w1280" +data.backdrop_path}")`;
 }
 
 async function getTrailer(id) {
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f6541db294ac187416fae0f1b9effcce&language=pt-BR`);
   const data = await response.json();
-  console.log(data);
 }
 
 function getLocalStorage() {
@@ -127,6 +126,7 @@ function responsivenessOfBoxSinopse(e) {
 window.addEventListener("resize", (e) => responsivenessOfBoxSinopse(e));
 
 window.addEventListener("load", (e) => {
+  loading();
   getLocalStorage();
   setTimeout(() => {
     responsivenessOfBoxSinopse(e);

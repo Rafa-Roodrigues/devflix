@@ -1,11 +1,12 @@
 import { urls } from "./dataApi.js";
+import { loading } from "./loading.js";
 
 async function getMovies(url, params) {
   const urlParams = url + params;
   const response = await fetch(urlParams);
   const data = await response.json();
 
-  return data;
+  renderCards(data.results);
 }
 
 function createCardMovie(movie) {
@@ -53,12 +54,13 @@ function createCardMovie(movie) {
   return container;
 }
 
-async function request(url, params) {
-  const movies = await getMovies(url, params);
-  renderCards(movies.results);
-}
+// async function request(url, params) {
+//   const movies = await getMovies(url, params);
+//   renderCards(movies.results);
+// }
 
 function renderCards(movies) {
+
   const container = document.getElementById("container-movies");
   container.innerHTML = "";
   
@@ -70,5 +72,19 @@ function renderCards(movies) {
   });
 }
 
-window.addEventListener("load", request(urls.movies, "&page=1"));
+getMovies(urls.movies, "&page=1");
 
+window.addEventListener("load", () => {
+  loading();
+});
+
+
+document.getElementById("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const search = document.getElementById("search");
+
+  if(search.value) {
+    loading();
+    getMovies(urls.search, search.value);
+  }
+})

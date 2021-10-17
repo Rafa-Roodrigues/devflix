@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="box-loader">
+      <div class="loader"></div>
+    </div>
     <header id="header-main">
       <nav id="nav-main" class="container">
         <img id="logo" src="./img/devflix.svg" alt="">
@@ -23,11 +26,6 @@
     <main>
       <section id="container-movies" class="container container-movies"></section>
     </main>
-    <article>
-      <div class="container pagination">
-        <p>Página 4 de 250: <span id="numberPages"></span></p>
-      </div>
-    </article>
     <footer>
       <a href="https://github.com/Rafa-Roodrigues?tab=repositories" target="_blank">Desenvolvido por: Rafael Rodrigues</a>
       <p>
@@ -40,6 +38,5 @@
       </p>
     </footer>
     <script type="module" src="./js/request.js"></script>
-    <script type="module" src="./js/pagination.js"></script>
   </body>
 </html>
