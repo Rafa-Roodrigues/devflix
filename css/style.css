@@ -429,7 +429,7 @@ footer p {
   font-weight: bold;
 } */
 
-iframe {
+embed {
   max-width: 600px;
   width: 100%;
 
@@ -439,19 +439,19 @@ iframe {
 /********** RESPONSIVIDADE DA MODAL **********/
 
 @media screen and (min-width: 0px) {
-  iframe {
+  embed {
     height: 280px;
   }
 }
 
 @media screen and (min-width: 456px) and (max-width: 780px) {
-  iframe {
+  embed {
     height: 320px;
   }
 }
 
 @media screen and (min-width: 781px) {
-  iframe {
+  embed {
     height: 400px;
   }
 }

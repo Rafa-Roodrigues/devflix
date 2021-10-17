@@ -82,7 +82,6 @@ function  createCard({
         <button data="${id}" id="button-watch-movie">Assistir trailer</button>
       </div>
       <p id="sinopse-movie">${overview}</p>
-        <!-- <iframe src="https://www.youtube.com/embed/yL65RwsVjA8" frameborder="0" allowfullscreen></iframe> -->
     </section>
   `;
 
@@ -113,36 +112,24 @@ function renderInfoOfMovie(movie) {
 
 async function modalOpenClose(status, id) {
   const modal = document.getElementById("modal");
-  // const contentModal = document.getElementById("content-modal");
 
   if(status) {
     modal.style.display = "flex";
     const trailer = await getTrailer(id);
     if(trailer[0]) {
-      let iframe = `
-        <iframe 
-          src="https://www.youtube.com/embed/${trailer[0].key}" 
-          frameborder="0" allow="accelerometer; 
-          autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      let embed = `
+        <embed type="video/webm" src="https://www.youtube.com/embed/${trailer[0].key}">
       `;
-      modal.innerHTML = iframe;
-      // contentModal.innerHTML = iframe;
-      // const p = document.createElement("p");
-      // p.innerHTML = "Coloque em tela cheia para uma melhor expêriencia!"
-      // contentModal.appendChild(p);
+      modal.innerHTML = embed;
     } else {
       const h2 = document.createElement("h2");
       h2.innerHTML = "Infelizmente não temos este trailer!!!"
       modal.appendChild(h2);
-      // contentModal.appendChild(h2);
     }
     
   } else {
     modal.style.display = "none";
     modal.innerHTML = "";
-    // contentModal.innerHTML = "";
   }
 }
 
