@@ -401,15 +401,17 @@ footer p {
   align-items: center;
 }
 
-#content-modal {
+/* #content-modal {
   width: 100%;
   max-width: 600px;
   color: var(--cor-branco);
   text-align: center;
   padding: 8px;
-}
+} */
 
-#content-modal h2 {
+/* #content-modal h2 { */
+#modal h2 {
+  max-width: 600px;
   width: 100%;
   font-size: 30px;
   background-color: var(--orange);
@@ -417,7 +419,7 @@ footer p {
   padding: 5px 10px;
 }
 
-#modal p {
+/* #modal p {
   color: #ffffff;
   display: block;
   background-color: var(--orange);
@@ -425,9 +427,10 @@ footer p {
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
-}
+} */
 
 iframe {
+  max-width: 600px;
   width: 100%;
 
   padding-bottom: 10px;

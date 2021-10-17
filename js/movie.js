@@ -113,7 +113,7 @@ function renderInfoOfMovie(movie) {
 
 async function modalOpenClose(status, id) {
   const modal = document.getElementById("modal");
-  const contentModal = document.getElementById("content-modal");
+  // const contentModal = document.getElementById("content-modal");
 
   if(status) {
     modal.style.display = "flex";
@@ -127,19 +127,22 @@ async function modalOpenClose(status, id) {
           allowfullscreen>
         </iframe>
       `;
-      contentModal.innerHTML = iframe;
-      const p = document.createElement("p");
-      p.innerHTML = "Coloque em tela cheia para uma melhor expêriencia!"
-      contentModal.appendChild(p);
+      modal.innerHTML = iframe;
+      // contentModal.innerHTML = iframe;
+      // const p = document.createElement("p");
+      // p.innerHTML = "Coloque em tela cheia para uma melhor expêriencia!"
+      // contentModal.appendChild(p);
     } else {
       const h2 = document.createElement("h2");
       h2.innerHTML = "Infelizmente não temos este trailer!!!"
-      contentModal.appendChild(h2);
+      modal.appendChild(h2);
+      // contentModal.appendChild(h2);
     }
     
   } else {
     modal.style.display = "none";
-    contentModal.innerHTML = "";
+    modal.innerHTML = "";
+    // contentModal.innerHTML = "";
   }
 }
 
