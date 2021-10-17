@@ -388,8 +388,9 @@ footer p {
 
 /********** MODAL **********/
 #modal {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.8);
 
   position: absolute;
@@ -435,26 +436,26 @@ iframe {
 
 /********** RESPONSIVIDADE DA MODAL **********/
 
-@media(min-width: 0px) {
+@media screen and (min-width: 0px) {
   iframe {
     height: 280px;
   }
 }
 
-@media(min-width: 456px) and (max-width: 780px) {
+@media screen and (min-width: 456px) and (max-width: 780px) {
   iframe {
     height: 320px;
   }
 }
 
-@media(min-width: 781px) {
+@media screen and (min-width: 781px) {
   iframe {
     height: 400px;
   }
 }
 /********** RESPONSIVIDADE DA PÁGINA DAS INFORMAÇÕES DO FILME **********/
 
-@media(min-width: 0px) {
+@media screen and (min-width: 0px) {
   #container-movie-info {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -488,7 +489,7 @@ iframe {
   }
 }
 
-@media(min-width: 456px) and (max-width: 780px) {
+@media screen and (min-width: 456px) and (max-width: 780px) {
   #name-movie {
     font-size: 1.5rem;
   }
@@ -517,7 +518,7 @@ iframe {
   }
 }
 
-@media(min-width: 781px) {
+@media screen and (min-width: 781px) {
   #name-movie {
     font-size: 1.875rem;
   }
@@ -546,7 +547,7 @@ iframe {
 }
 
 /********** RESPONSIVIDADE DO CABEÇALHO **********/
-@media(min-width: 0px) and (max-width: 780px) {
+@media screen and (min-width: 0px) and (max-width: 780px) {
   nav {
     flex-direction: column;
     align-items: center;
@@ -560,7 +561,7 @@ iframe {
   }
 }
 
-@media(min-width: 781px) {
+@media screen and (min-width: 781px) {
   nav {
     align-items: center;
     justify-content: space-between;
